@@ -12,6 +12,9 @@ class Stembus:
             if self.actief == True:
                 print("Stembus is geinitialiseerd")
 
+    def deinitialisatie(self):
+        self.actief = False
+
 
 stembus = Stembus(usbstick)
 stembus.inialisatie()

@@ -19,7 +19,7 @@ voornamen = [
     "Adam",
     "Jules",
     "Lucas",
-    "Gabriël",
+    "Gabby",
     "Victor",
     "Finn",
 ]

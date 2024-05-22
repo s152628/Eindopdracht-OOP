@@ -1,13 +1,32 @@
 #Stemoverzicht
 ## Partij: {{ partij_1 }}
-Aantal stemmen: {{ stemmen_partij_1 }}
+Aantal stemmen: {{ stemmen_partij_1 }}  
+{% for naam_kandidaat, kandidaat in kandidaten1 %}
+   {{ naam_kandidaat }}: {{ kandidaat }}
+{% endfor %}
+
 ## Partij: {{ partij_2 }}
-Aantal stemmen: {{ stemmen_partij_2 }}
+Aantal stemmen: {{ stemmen_partij_2 }}  
+{% for naam_kandidaat, kandidaat in kandidaten2 %}
+    {{ naam_kandidaat }}: {{ kandidaat }}
+{% endfor %} 
+
 ## Partij: {{ partij_3 }}
-Aantal stemmen: {{ stemmen_partij_3 }}
+Aantal stemmen: {{ stemmen_partij_3 }}  
+{% for naam_kandidaat, kandidaat in kandidaten3 %}
+    {{ naam_kandidaat }}: {{ kandidaat }}
+{% endfor %}
+
 ## Partij: {{ partij_4 }}
-Aantal stemmen: {{ stemmen_partij_4 }}
+Aantal stemmen: {{ stemmen_partij_4 }}  
+{% for naam_kandidaat, kandidaat in kandidaten4 %}
+    {{ naam_kandidaat }}: {{ kandidaat }}
+{% endfor %}
+
 ## Partij: {{ partij_5 }}
-Aantal stemmen: {{ stemmen_partij_5 }}
+Aantal stemmen: {{ stemmen_partij_5 }}   
+{% for naam_kandidaat, kandidaat in kandidaten5 %}
+    {{ naam_kandidaat }}: {{ kandidaat }}
+{% endfor %}
 
 

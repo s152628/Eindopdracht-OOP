@@ -6,19 +6,21 @@ import random
 
 
 class Stemcomputer:
-    def __init__(self, code):
+    def __init__(self, code, usbstick, stembus):
         self.initialisatiecode = code
         self.actief = False
+        self.usbstick = usbstick
+        self.stembus = stembus
 
     def initialiseer(self):
-        if stembus.actief == True:
-            if self.initialisatiecode == usbstick.opstartcode2:
+        if self.stembus.actief == True:
+            if self.initialisatiecode == self.usbstick.opstartcode2:
                 self.actief = True
                 print("Stemcomputer 1 is geïnitialiseerd")
-            elif self.initialisatiecode == usbstick.opstartcode3:
+            elif self.initialisatiecode == self.usbstick.opstartcode3:
                 self.actief = True
                 print("Stemcomputer 2 is geïnitialiseerd")
-            elif self.initialisatiecode == usbstick.opstartcode4:
+            elif self.initialisatiecode == self.usbstick.opstartcode4:
                 self.actief = True
                 print("Stemcomputer 3 is geïnitialiseerd")
 
@@ -39,9 +41,9 @@ class Stemcomputer:
         self.actief = False
 
 
-stemcomputer1 = Stemcomputer(usbstick.opstartcode2)
-stemcomputer2 = Stemcomputer(usbstick.opstartcode3)
-stemcomputer3 = Stemcomputer(usbstick.opstartcode4)
+stemcomputer1 = Stemcomputer(usbstick.opstartcode2, usbstick, stembus)
+stemcomputer2 = Stemcomputer(usbstick.opstartcode3, usbstick, stembus)
+stemcomputer3 = Stemcomputer(usbstick.opstartcode4, usbstick, stembus)
 
 
 def initaliseer_stemcomputers():
