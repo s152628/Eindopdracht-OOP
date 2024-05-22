@@ -1,6 +1,7 @@
 from USBStick import usbstick
 from lijsten import Lijsten
 from kiezers import Kiezers
+from stembus import stembus
 import random
 
 
@@ -10,15 +11,16 @@ class Stemcomputer:
         self.actief = False
 
     def initialiseer(self):
-        if self.initialisatiecode == usbstick.opstartcode2:
-            self.actief = True
-            print("Stemcomputer 1 is geïnitialiseerd")
-        elif self.initialisatiecode == usbstick.opstartcode3:
-            self.actief = True
-            print("Stemcomputer 2 is geïnitialiseerd")
-        elif self.initialisatiecode == usbstick.opstartcode4:
-            self.actief = True
-            print("Stemcomputer 3 is geïnitialiseerd")
+        if stembus.actief == True:
+            if self.initialisatiecode == usbstick.opstartcode2:
+                self.actief = True
+                print("Stemcomputer 1 is geïnitialiseerd")
+            elif self.initialisatiecode == usbstick.opstartcode3:
+                self.actief = True
+                print("Stemcomputer 2 is geïnitialiseerd")
+            elif self.initialisatiecode == usbstick.opstartcode4:
+                self.actief = True
+                print("Stemcomputer 3 is geïnitialiseerd")
 
     def stemmen(self):
         for kiezer in Kiezers:
@@ -48,25 +50,11 @@ def initaliseer_stemcomputers():
     stemcomputer3.initialiseer()
 
 
-random_keuze = random.randint(1, 3)
-if random_keuze == 1:
-    stemcomputer1.stemmen()
-elif random_keuze == 2:
-    stemcomputer2.stemmen()
-elif random_keuze == 3:
-    stemcomputer3.stemmen()
-
-for lijst in Lijsten:
-    print("Lijststemmen: ")
-    print(f"{lijst.naam}: {lijst.stemmen}")
-    print("Voorkeurstemmen:")
-    print(f"{lijst.kandidaten[0]}: {lijst.kandidaat_1}")
-    print(f"{lijst.kandidaten[1]}: {lijst.kandidaat_2}")
-    print(f"{lijst.kandidaten[2]}: {lijst.kandidaat_3}")
-    print(f"{lijst.kandidaten[3]}: {lijst.kandidaat_4}")
-    print(f"{lijst.kandidaten[4]}: {lijst.kandidaat_5}")
-    print(f"{lijst.kandidaten[5]}: {lijst.kandidaat_6}")
-    print(f"{lijst.kandidaten[6]}: {lijst.kandidaat_7}")
-    print(f"{lijst.kandidaten[7]}: {lijst.kandidaat_8}")
-    print(f"{lijst.kandidaten[8]}: {lijst.kandidaat_9}")
-    print(f"{lijst.kandidaten[9]}: {lijst.kandidaat_10}")
+def stem_simulatie():
+    random_keuze = random.randint(1, 3)
+    if random_keuze == 1:
+        stemcomputer1.stemmen()
+    elif random_keuze == 2:
+        stemcomputer2.stemmen()
+    elif random_keuze == 3:
+        stemcomputer3.stemmen()

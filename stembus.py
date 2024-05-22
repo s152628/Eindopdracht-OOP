@@ -9,7 +9,8 @@ class Stembus:
     def inialisatie(self):
         if self.USB.opstartcode1 == "START":
             self.actief = True
-            print("Stembus is geinitialiseerd")
+            if self.actief == True:
+                print("Stembus is geinitialiseerd")
 
 
 stembus = Stembus(usbstick)
