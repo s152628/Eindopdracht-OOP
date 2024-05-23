@@ -14,7 +14,12 @@ class Stembus:
 
     def deinitialisatie(self):
         self.actief = False
+        print("Stembus gedeïnitialiseerd")
 
 
 stembus = Stembus(usbstick)
 stembus.inialisatie()
+
+
+def deïnitialiseer_stembus():
+    stembus.deinitialisatie()

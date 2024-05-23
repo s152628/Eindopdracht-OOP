@@ -61,6 +61,9 @@ class Kiezer:
         if Chipkaart.code == code:
             self.magstemmen = True
 
+    def takeChipkaart(self):
+        self.magstemmen = False
+
 
 Kiezers = []
 for i in range(1200):

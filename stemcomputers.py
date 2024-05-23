@@ -39,6 +39,7 @@ class Stemcomputer:
 
     def deinitialiseer(self):
         self.actief = False
+        print("Stemcomputer gedeïnitialiseerd")
 
 
 stemcomputer1 = Stemcomputer(usbstick.opstartcode2, usbstick, stembus)
@@ -60,3 +61,9 @@ def stem_simulatie():
         stemcomputer2.stemmen()
     elif random_keuze == 3:
         stemcomputer3.stemmen()
+
+
+def deinitialiseer_stemcomputers():
+    stemcomputer1.deinitialiseer()
+    stemcomputer2.deinitialiseer()
+    stemcomputer3.deinitialiseer()

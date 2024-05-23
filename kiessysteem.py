@@ -1,8 +1,11 @@
 from stemcomputers import (
     initaliseer_stemcomputers,
     stem_simulatie,
+    deinitialiseer_stemcomputers,
 )
 from lijsten import Lijsten
+from kiezers import Kiezers
+from stembus import deïnitialiseer_stembus
 
 
 def stemsimulatie():
@@ -75,3 +78,8 @@ for lijst in Lijsten:
         kandidatenlijst5.append(lijst.kandidaat_8)
         kandidatenlijst5.append(lijst.kandidaat_9)
         kandidatenlijst5.append(lijst.kandidaat_10)
+for kiezer in Kiezers:
+    kiezer.takeChipkaart()
+print("Chipkaarten werden verzameld")
+deinitialiseer_stemcomputers()
+deïnitialiseer_stembus()
